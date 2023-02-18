@@ -1,6 +1,7 @@
 package com.example.myfirstapp;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,6 +16,7 @@ import com.example.myfirstapp.databinding.FragmentFirstBinding;
 
 public class FirstFragment extends Fragment {
 
+    public static final String FIRSTFRAGMENT = "FIRSTFRAGMENT";
     private FragmentFirstBinding binding;
     TextView showCountTextView;
 
@@ -51,6 +53,7 @@ public class FirstFragment extends Fragment {
             public void onClick(View v) {
                 Toast myToast = Toast.makeText(getActivity(), "Hello Toast!", Toast.LENGTH_SHORT);
                 myToast.show();
+                Log.i(FIRSTFRAGMENT, "Toast was clicked");
             }
         });
         view.findViewById(R.id.count_button).setOnClickListener(new View.OnClickListener() {
